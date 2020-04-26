@@ -35,7 +35,6 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  BACK_CONFIG: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -87,13 +86,6 @@ jobs:
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
-
-    - name: Back Up Config file
-      if: env.BACK_CONFIG == 'true'
-      run: |
-        cd openwrt
-        ./scripts/diffconfig.sh > seed.config
- 
  
     - name: Download package
       id: package
@@ -123,7 +115,6 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        find openwrt/ -name "seed.config" | xargs -i mv -f {} openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "::set-env name=FIRMWARE::$PWD"
