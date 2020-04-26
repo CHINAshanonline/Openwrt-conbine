@@ -13,3 +13,6 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Lienol/openwrt-package
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
+
+git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
+git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
