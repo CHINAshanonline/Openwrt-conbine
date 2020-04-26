@@ -91,6 +91,7 @@ jobs:
     - name: Back Up Config file
       if: env.BACK_CONFIG == 'true'
       run: |
+        cd openwrt
         ./scripts/diffconfig.sh > seed.config
  
  
