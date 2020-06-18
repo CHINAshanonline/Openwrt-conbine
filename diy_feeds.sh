@@ -26,6 +26,6 @@ echo "luci-app-openclash" >> .git/info/sparse-checkout
 git pull origin master
 git branch --set-upstream-to=origin/master master
 
-pushd package/luci-app-openclash/luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
+# pushd package/luci-app-openclash/luci-app-openclash/tools/po2lmo
+# make && sudo make install
+# popd
