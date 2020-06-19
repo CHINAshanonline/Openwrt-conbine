@@ -15,14 +15,16 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
 
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
+# clash
 # git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
 
-mkdir package/luci-app-openclash
-cd package/luci-app-openclash
-git init
-git remote add -f origin https://github.com/vernesong/OpenClash.git
-git config core.sparsecheckout true
-echo "luci-app-openclash" >> .git/info/sparse-checkout
-git pull origin master
-git branch --set-upstream-to=origin/master master
-
+#============open clash===================
+# mkdir package/luci-app-openclash
+# cd package/luci-app-openclash
+# git init
+# git remote add -f origin https://github.com/vernesong/OpenClash.git
+# git config core.sparsecheckout true
+# echo "luci-app-openclash" >> .git/info/sparse-checkout
+# git pull origin master
+# git branch --set-upstream-to=origin/master master
+#==========================================
