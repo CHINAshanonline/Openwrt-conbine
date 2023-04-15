@@ -44,6 +44,9 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
         set +e
         docker rmi `docker images -q`
         echo "Deleting files, please wait ..."
