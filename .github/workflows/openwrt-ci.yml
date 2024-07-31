@@ -45,6 +45,7 @@ jobs:
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git ./package/luci-theme-atmaterial
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
